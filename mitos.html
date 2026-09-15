@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Patrio - Mitos</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        html, body {
+            min-height: 100vh;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #faf6f0; 
+            color: #222; 
+            line-height: 1.5; 
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container { max-width: 1250px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+        /* Navegación */
+        header { background: #fff; padding: 15px 0; border-top: 6px solid #006847; box-shadow: 0 2px 5px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: center; align-items: center; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { color: #006847; }
+
+        /* Encabezado */
+        .main-section { 
+            flex: 1;
+            padding: 50px 0; 
+            text-align: left;
+        }
+        
+        .page-title { 
+            font-size: 2.1rem; 
+            color: #006847; 
+            font-weight: 800;
+            text-transform: uppercase; 
+            border-bottom: 3.5px solid #CE1126;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle { 
+            color: #666; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            margin-bottom: 35px; 
+            display: block;
+        }
+
+        /* Layout de 3 Columnas (Imágenes Laterales) */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr 240px;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .side-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .side-image {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* Lista de Mitos Estáticos */
+        .mitos-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mito-card {
+            background: #ffffff; 
+            padding: 22px 24px; 
+            border-radius: 8px;
+            border-top: 4px solid #006847;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+
+        .mito-badge {
+            background-color: #e4f0ec; 
+            color: #006847; 
+            font-weight: 700; 
+            font-size: 0.88rem; 
+            padding: 6px 14px; 
+            border-radius: 6px; 
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: inline-block;
+            line-height: 1.35;
+        }
+
+        .arrow-icon {
+            font-size: 0.8rem;
+            color: #006847;
+        }
+
+        .mito-content {
+            font-size: 0.92rem;
+            color: #444444;
+            line-height: 1.55;
+        }
+
+        .mito-content strong {
+            color: #111;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer { 
+            background: #e9e9e9; 
+            color: #222; 
+            padding: 25px 20px; 
+            border-top: 6px solid #006847; 
+            border-bottom: 6px solid #006847;
+            margin-top: auto; 
+        }
+        .footer-info {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+            gap: 12px 60px;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+        .footer-info p { color: #333; }
+        .footer-info strong { color: #000; font-weight: 700; }
+
+        @media (max-width: 950px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+            .side-image-container {
+                display: none;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .footer-info { grid-template-columns: 1fr; gap: 10px; }
+            .mito-badge { font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="fechas.html">Fechas</a></li>
+                    <li><a href="personajes.html">Personajes</a></li>
+                    <li><a href="mitos.html" class="active">Mitos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <div class="container">
+            <h1 class="page-title">MITOS Y REALIDADES</h1>
+            <p class="subtitle">ACONTECIMIENTOS MEMORABLES DEL MES DE SEPTIEMBRE</p>
+
+            <div class="content-layout">
+                <!-- Imagen Izquierda -->
+                <div class="side-image-container">
+                    <img src="chiles.png" alt="Imagen Izquierda" class="side-image">
+                </div>
+
+                <!-- Lista de Mitos -->
+                <div class="mitos-list">
+                    <!-- Mito 1 -->
+                    <div class="mito-card">
+                        <div class="card-header">
+                            <span class="mito-badge">¿EL GRITO DE INDEPENDENCIA OCURRIÓ LA NOCHE DEL 15 DE SEPTIEMBRE?</span>
+                            <span class="arrow-icon">▲</span>
+                        </div>
+                        <p class="mito-content"><strong>Respuesta:</strong> Históricamente, el Grito ocurrió durante la madrugada del 16 de septiembre de 1810 (alrededor de las 5:00 a.m.). La tradición de celebrarlo la noche del 15 se popularizó durante el mandato de Porfirio Díaz, quien hizo coincidir la fiesta patriótica con el día de su cumpleaños.</p>
+                    </div>
+
+                    <!-- Mito 2 -->
+                    <div class="mito-card">
+                        <div class="card-header">
+                            <span class="mito-badge">¿EXISTIÓ REALMENTE "EL PÍPILA"?</span>
+                            <span class="arrow-icon">▲</span>
+                        </div>
+                        <p class="mito-content"><strong>Respuesta:</strong> Juan José de los Reyes Martínez ("El Pípila") se convirtió en un símbolo legendario. Los historiadores señalan que su figura representa el valor colectivo de los mineros de Guanajuato en la toma de la Alhóndiga de Granaditas, más que un solo individuo actuando de forma aislada.</p>
+                    </div>
+
+                    <!-- Mito 3 -->
+                    <div class="mito-card">
+                        <div class="card-header">
+                            <span class="mito-badge">¿HIDALGO TOCÓ PERSONALMENTE LA CAMPANA DE DOLORES?</span>
+                            <span class="arrow-icon">▲</span>
+                        </div>
+                        <p class="mito-content"><strong>Respuesta:</strong> No. Quien realmente repicó la campana de la parroquia para llamar al pueblo fue José Galván, el campanero oficial del templo, bajo las órdenes del cura Miguel Hidalgo.</p>
+                    </div>
+
+                    <!-- Mito 4 -->
+                    <div class="mito-card">
+                        <div class="card-header">
+                            <span class="mito-badge">EL ORIGEN GASTRONÓMICO: LOS CHILES EN NOGADA</span>
+                            <span class="arrow-icon">▲</span>
+                        </div>
+                        <p class="mito-content"><strong>Dato Curioso:</strong> Este famoso platillo fue ideado por las monjas agustinas del convento de Santa Mónica en Puebla para celebrar la firma de los Tratados de Córdoba y homenajear a Agustín de Iturbide, usando los colores de la bandera trigarante (verde del perejil, blanco de la nogada y rojo de la granada).</p>
+                    </div>
+                </div>
+
+                <!-- Imagen Derecha -->
+                <div class="side-image-container">
+                    <img src="luismi.png" alt="Imagen Derecha" class="side-image">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Nombre:</strong> Eugenio Zarate Aaron David</p>
+            <p><strong>No. Control:</strong> 24308051280537</p>
+            <p><strong>Especialidad:</strong> Programación</p>
+            <p><strong>Grado y Grupo:</strong> 5ºI</p>
+        </div>
+    </footer>
+
+</body>
+</html>
