@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Indica al navegador que este es un documento HTML5 -->
+<html lang="es"> <!-- Define que el idioma principal del sitio web es español -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Patrio - Inicio</title>
+    <!-- Configuración básica de la página (metadatos) -->
+    <meta charset="UTF-8"> <!-- Permite mostrar acentos, la letra 'ñ' y caracteres especiales correctamente -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsiva (se adapte a celulares y tablets) -->
+    <title>Mes Patrio - Inicio</title> <!-- Título que se muestra en la pestaña del navegador -->
+
+    <!-- Sección de estilos CSS (apariencia visual) -->
     <style>
+        /* Reinicia márgenes y bordes por defecto de todos los elementos para trabajar desde cero */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
+        /* Asegura que la página ocupe como mínimo todo el alto de la pantalla del usuario */
         html, body {
             min-height: 100vh;
         }
         
+        /* Estilos generales de la página: tipografía, color de fondo, texto y alineación */
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background-color: #f4f6f8; 
@@ -18,44 +24,52 @@
             line-height: 1.6; 
             text-align: left;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Organiza los elementos verticales (encabezado, contenido, pie) */
         }
         
+        /* Contenedor invisible para centrar el contenido y limitar su ancho máximo */
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; width: 100%; }
 
-        /* Navegación */
-        header { background: #fff; padding: 15px 0; border-top: 6px solid #006847; box-shadow: 0 2px 5px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: center; align-items: center; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #333; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-links a:hover, .nav-links a.active { color: #006847; }
+        /* Estilos de la barra de navegación superior */
+        header { 
+            background: #fff; 
+            padding: 15px 0; 
+            border-top: 6px solid #006847; /* Línea verde patria en la parte superior */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Sombra suave abajo */
+            position: sticky; top: 0; z-index: 100; /* Mantiene el menú pegado arriba al hacer scroll */
+        }
+        nav { display: flex; justify-content: center; align-items: center; } /* Centra los enlaces */
+        .nav-links { display: flex; gap: 20px; list-style: none; } /* Lista de enlaces en fila sin puntos */
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; } /* Apariencia del texto de los enlaces */
+        .nav-links a:hover, .nav-links a.active { color: #006847; } /* Cambia a color verde cuando pasas el mouse o estás en la página activa */
 
-        /* Banner / Hero */
+        /* Estilos del Banner Principal (Hero) */
         .hero { 
-            flex: 1;
+            flex: 1; /* Ocupa el espacio disponible en la pantalla */
             display: flex;
             align-items: center;
+            /* Fondo con imagen 'bandera.png' y un filtro oscuro superpuesto para leer bien el texto */
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('bandera.png') center/cover; 
             color: #fff; 
             padding: 80px 0; 
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 15px; }
-        .hero-description { font-size: 1.1rem; max-width: 700px; color: #e2e8f0; }
+        .hero h1 { font-size: 3rem; margin-bottom: 15px; } /* Título gigante */
+        .hero-description { font-size: 1.1rem; max-width: 700px; color: #e2e8f0; } /* Estilo del texto explicativo */
 
-        /* Footer */
+        /* Estilos del Pie de Página (Footer) */
         footer { 
             background: #e9e9e9; 
             color: #222; 
             padding: 25px 20px; 
-            border-top: 6px solid #006847; 
-            border-bottom: 6px solid #006847;
-            margin-top: auto; 
+            border-top: 6px solid #006847; /* Borde verde arriba */
+            border-bottom: 6px solid #006847; /* Borde verde abajo */
+            margin-top: auto; /* Empuja el footer al final de la pantalla si hay poco contenido */
         }
         .footer-info {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: auto auto; /* Acomoda los datos en 2 columnas */
             justify-content: center;
-            gap: 12px 60px;
+            gap: 12px 60px; /* Espaciado entre filas y columnas */
             text-align: center;
             font-size: 1.05rem;
         }
@@ -67,9 +81,10 @@
             font-weight: 700;
         }
 
+        /* Diseño responsivo: Si la pantalla mide 650px o menos (como en un celular) */
         @media (max-width: 650px) {
             .footer-info {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Pasa la información del footer a 1 sola columna */
                 gap: 10px;
             }
         }
@@ -77,6 +92,7 @@
 </head>
 <body>
 
+    <!-- Menú de Navegación Superior -->
     <header>
         <div class="container">
             <nav>
@@ -90,6 +106,7 @@
         </div>
     </header>
 
+    <!-- Sección Principal / Bienvenida con fondo de imagen -->
     <section class="hero">
         <div class="container">
             <h1>MES PATRIO</h1>
@@ -99,6 +116,7 @@
         </div>
     </section>
 
+    <!-- Pie de Página con Información del Alumno -->
     <footer>
         <div class="footer-info">
             <p><strong>Nombre:</strong> Eugenio Zarate Aaron David</p>
